@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "name": "LED Light Bulb",
+    "quantity": 10,
+    "price": 4.99
+  },
+  {
+    "id": 2,
+    "name": "Electric Drill",
+    "quantity": 5,
+    "price": 89.99
+  },
+  {
+    "id": 3,
+    "name": "Hammer",
+    "quantity": 15,
+    "price": 12.99
+  },
+  {
+    "id": 4,
+    "name": "Garden Hose",
+    "quantity": 8,
+    "price": 24.99
+  },
+  {
+    "id": 5,
+    "name": "Set of Screwdrivers",
+    "quantity": 12,
+    "price": 19.99
+  },
+  {
+    "id": 6,
+    "name": "Wall Paint, White",
+    "quantity": 20,
+    "price": 29.99
+  },
+  {
+    "id": 7,
+    "name": "Ceiling Fan",
+    "quantity": 3,
+    "price": 199.99
+  },
+  {
+    "id": 8,
+    "name": "Plumbing Wrench",
+    "quantity": 10,
+    "price": 14.99
+  },
+  {
+    "id": 9,
+    "name": "Cordless Chainsaw",
+    "quantity": 6,
+    "price": 239.99
+  },
+  {
+    "id": 10,
+    "name": "Tile Cutter",
+    "quantity": 4,
+    "price": 159.99
+  }
+]

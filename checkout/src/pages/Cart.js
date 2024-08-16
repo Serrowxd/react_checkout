@@ -14,6 +14,11 @@ const Cart = ({ cart }) => {
 				))
 			) :
 			<p>"Please add items to your cart"</p>}
+			
+			<h2 className={"text-4xl mt-5"}>
+				Total Items: {cart.length} // Cost: {cart.reduce((acc, item) => acc + item.price, 0).toFixed(2)}
+			</h2>
+			
 			<Link to="/checkout" className={"mt-4 inline-block bg-blue-500 text-white py-2 px-4 rounded"}>
 				Proceed to Checkout
 			</Link>

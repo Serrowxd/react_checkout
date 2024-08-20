@@ -6,6 +6,7 @@ import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
 import Confirmation from "./pages/Confirmation";
 import HomePage from "./pages/HomePage";
+import item from "./components/Item";
 
 function App() {
   const [cart, setCart] = useState([]); // Array of Cart Data
@@ -15,22 +16,32 @@ function App() {
     setItems(itemList)
   }, []);
  
-  // only supports one item at a time
+  // Add item to cart
   const addToCart = (item) => {
-    const itemExists = cart.find(cartItem => cartItem.id === item.id); // check if item exists
-    
-    // if item doesn't already exist in cart, immutable state update, trigger re-render with new array reference
-    if(!itemExists) {
-      setCart([...cart, item])
-    } else {
-      // some kind of error handling
-    }
+    setCart(prevCart => {
+      const itemExists = prevCart.find(cartItem => cartItem.id === item.id);
+      
+      if (itemExists) {
+        return prevCart.map(cartItem =>
+          cartItem.id === item.id
+          ? { ...cartItem, quantity: cartItem.quantity + 1 }
+            : cartItem
+        )
+      } else {
+        return [...prevCart, { ...item, quantity: 1}];
+      }
+    })
+  }
+  
+  // Remove item from cart
+  const removeFromCart = (itemId) => {
+    setCart(cart.filter(cartItem => cartItem.id !== item.id));
   }
   
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<HomePage items={items} addToCart={addToCart}/>} />
+        <Route path="/" element={<HomePage items={items} addToCart={addToCart} removeFromCart={removeFromCart}/>} />
         <Route path="/cart" element={<Cart cart={cart}/>} />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/confirmation" element={<Confirmation />} />

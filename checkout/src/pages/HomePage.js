@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Item from "../components/Item";
 
-const HomePage = ({items, addToCart}) => {
+const HomePage = ({items, addToCart, removeFromCart}) => {
 	return(
 		<div className={"container-fluid"}>
 			<div className={"w-full"}>
